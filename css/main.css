@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    background-image: url(../assets/imag/haru.jpg);
+    background-size: cover; 
+}
+nav {
+    height: 60px;
+    background-color: #1dcaff;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.first{
+    margin: 20px; 
+}
+#container{
+    height: 50px;
+    width: 300px;
+    margin-top: 30px;
+    background-color: white;
+    outline: 1px solid pink
+}
