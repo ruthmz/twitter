@@ -1,15 +1,19 @@
 
 var submitButton = document.getElementById('submit');
 var wholeMessage = document.getElementById('message-input');
+var number = document.getElementById('number');
+
 
 function submitClicked (event) {
     var message = wholeMessage.value;    
     var element = document.createElement('div');
     element.appendChild(document.createTextNode(message));  
     document.getElementById('container').appendChild(element);
-    element.setAttribute('class','box')
+    element.setAttribute('class', 'box');
+    number.textContent=140;  
     clearMessage ();
     enabled ();
+    // clearNumber();
 }
 
 function enabled (event) {
@@ -23,12 +27,10 @@ setInterval( "enabled (event)",100)
 
 function counterChar (event) {
     var text = wholeMessage.value;
-    var number = document.getElementById('number');
     var counter = parseInt((140-(text.length)));
     number.innerHTML = counter; 
 }
-wholeMessage.addEventListener('keyup',counterChar, false);
-
+wholeMessage.addEventListener('keyup',counterChar);
 
 // submitButton.onclick = submitClicked;
 submitButton.addEventListener('click',submitClicked);
@@ -39,8 +41,9 @@ function clearMessage () {
 
 
 
-
-/*
+/*function clearNumber(event) {
+    number.textContent=140;
+}
 // Esto sería para las futuras versiones
 function showMessage() {
     document.getElementById('container').innerHTML = document.getElementById('message-input').value
