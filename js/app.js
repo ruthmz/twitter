@@ -3,7 +3,7 @@ var submitButton = document.getElementById('submit');
 var wholeMessage = document.getElementById('message-input');
 var number = document.getElementById('number');
 
-
+//Creamos una funcion para que cree un div que almacene los mensajes del input
 function submitClicked (event) {
     var message = wholeMessage.value;    
     var element = document.createElement('div');
@@ -13,21 +13,31 @@ function submitClicked (event) {
     number.textContent=140;  
     clearMessage ();
     enabled ();
-    // clearNumber();
 }
-
+// Habilita el botón, solo si se ingresa texto y la cantidad de letras es menor a 141
 function enabled (event) {
     if(wholeMessage.value == ''){
         document.getElementById('submit').disabled = true;
-    } else {
+    } else if (wholeMessage.value.length>=141) {
+        document.getElementById('submit').disabled = true;
+    }
+    else {
         document.getElementById('submit').disabled = false;       
     }
 }
 setInterval( "enabled (event)",100)
 
+//funcion para contar los caracteres del texto que se ingrese al  textarea
 function counterChar (event) {
     var text = wholeMessage.value;
     var counter = parseInt((140-(text.length)));
+    if(text.length>=140){
+       document.getElementById('number').style.color = "red";
+    } else if(text.length>=130 && text.length <= 140){
+        document.getElementById('number').style.color = "gray";
+    } else {
+        document.getElementById('number').style.color = 'black';
+    }
     number.innerHTML = counter; 
 }
 wholeMessage.addEventListener('keyup',counterChar);
