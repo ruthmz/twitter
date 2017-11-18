@@ -27,3 +27,10 @@ nav {
     background-color: white;
     outline: 1px solid pink
 }
+textarea{
+    resize: none;
+    overflow: scroll;
+    /* width: 100%; */
+    overflow-y:hidden;
+    overflow-x: hidden;
+}
