@@ -3,20 +3,31 @@ var submitButton = document.getElementById('submit');
 var wholeMessage = document.getElementById('message-input');
 var number = document.getElementById('number');
 var container = document.getElementById('container');
-var currentTime = new Date();
-var hour = currentTime.getHours()+ ':' + currentTime.getMinutes();
 
 
 //Creamos una funcion para que cree un div que almacene los mensajes del input
 function submitClicked (event) {
+    var currentTime = new Date();
+    var hour = currentTime.getHours();
+    var minutes = currentTime.getMinutes();
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+    var suffix = "AM";
+    if (hour >= 12){
+        suffix = "PM";
+        hour = hour - 12;
+    } if (hour == 0) {
+        hour = 12;
+    }
     var message = wholeMessage.value;    
     var element = document.createElement('div');
-    var newHour = document.createElement('div');
-    newHour.innerHTML = hour;
-    element.appendChild(newHour);
+    var countHour = document.createElement('div');
+    countHour.innerHTML = hour + ':' + minutes + " " + suffix;
+    element.insertBefore(countHour,element.childNodes[0]);
     element.appendChild(document.createTextNode(message));  
-    container.appendChild(element);
-    element.setAttribute('class', 'box');
+    container.insertBefore(element,container.children[0].nextSibling);
+    element.classList.add('box');
     number.textContent=140;  
     clearMessage ();
     enabled ();
@@ -68,19 +79,3 @@ function clearMessage () {
     document.getElementById('message-input').value = '';
 }
 
-
-
-
-/*function clearNumber(event) {
-    number.textContent=140;
-}
-// Esto sería para las futuras versiones
-function showMessage() {
-    document.getElementById('container').innerHTML = document.getElementById('message-input').value
-}   
-function clearMessage {
-    document.getElementById('container').value = ""; 
-}
-// document.getElementById('submit').onclick = showMessage;
-// document.getElementById('submit').onclick = function () {showMessage(); clearMessage();};
-*/

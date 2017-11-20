@@ -8,6 +8,7 @@ body {
     height: 100%;
     background-image: url(../assets/imag/haru.jpg);
     background-size: cover; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 nav {
     height: 60px;
@@ -18,14 +19,25 @@ nav {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .first{
-    margin: 20px; 
+    margin: 20px;
+    float: right; 
+    position: relative;
+    margin-top: -185px;
+    background-color: #E5F4F9;
+    padding: 20px;
+    box-shadow:5px 5px 5px #888888;
 }
 .box{
     height: 50px;
-    width: 300px;
+    width: 500px;
     margin-top: 30px;
+    margin-bottom: 30px;
     background-color: white;
-    outline: 1px solid pink
+    box-shadow:5px 5px 5px #888888;    
+    display: block;
+    border: 1px solid #1DA1F2;
+    border-radius: 10px;
+    padding: 5px;  
 }
 textarea{
     resize: none;
@@ -33,4 +45,41 @@ textarea{
     /* width: 100%; */
     overflow-y:hidden;
     overflow-x: hidden;
+    display: block;
+    border: 1px solid #1DA1F2;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+    
+}
+.zero{
+    height:  180PX;
+    width: 400pX;
+    background-color: #fff;
+    margin-left: 50px;
+    margin-top:30px;
+    padding: 15px;
+    border-style: dotted;
+    border-color: #1DA1F2;
+}
+.zero h2{
+    color:rgb(22, 129, 190);
+}
+.first #number{
+    position: relative;
+    /* float: top; */
+    display: inline-block;
+    /* bottom: 20px;  */
+}
+
+input[type=button]{
+    background-color: #1DA1F2;
+    text-decoration: none;
+    border: none;
+    display: inline-block;
+    color:#fff;
+    display: inline-block;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 5px;
 }
